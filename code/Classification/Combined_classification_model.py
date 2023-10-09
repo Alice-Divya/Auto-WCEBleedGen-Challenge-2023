@@ -15,7 +15,7 @@ from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.callbacks import LearningRateScheduler, ModelCheckpoint
 
 # root directory path
-root_folder = 'D:/JammuO'
+root_folder = 'Dataset path'
 
 # loading data
 def load_and_preprocess_data(data_folder, preprocessing_function):
