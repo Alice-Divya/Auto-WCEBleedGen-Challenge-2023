@@ -1,7 +1,7 @@
 # Auto-WCEBleedGen Challenge-2023
 ## Automatic Detection and Classification of Bleeding and Non-Bleeding frames in Wireless Capsule Endoscopy
 
-We showcase our solution and subsequent progress for the [Auto-WCEBleedGen Challenge](https://misahub.in/CVIP/challenge.html) to create, test, and evaluate cutting-edge Artificial Intelligence (AI) models for automatically detecting and classifying bleeding and non-bleeding frames extracted from Wireless Capsule Endoscopy (WCE) videos. Our project uses the dataset created by the Auto-WCEBleedGen Challenge organizers. The training dataset encompasses various gastrointestinal bleeding scenarios, accompanied by medically validated binary masks and bounding boxes. Our objective is to facilitate comparisons with existing methods and enhance the interpretability and reproducibility of automated systems in bleeding detection using WCE data. 
+We showcase our solution and subsequent progress for the [Auto-WCEBleedGen Challenge](https://misahub.in/CVIP/challenge.html) to create, test, and evaluate cutting-edge Artificial Intelligence (AI) models for automatically detecting and classifying bleeding/non-bleeding frames extracted from Wireless Capsule Endoscopy (WCE) videos. Our project uses the dataset created by the Auto-WCEBleedGen Challenge organizers. The training dataset encompasses various gastrointestinal bleeding scenarios, accompanied by medically validated binary masks and bounding boxes. Our objective is to facilitate comparisons with existing methods and enhance the interpretability and reproducibility of automated systems for bleeding detection using WCE data.
 
 ### Contents
 * [Team members](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#team-members)
@@ -29,7 +29,7 @@ Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding 
 
 
 ## Dataset
-The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format, with 224 × 224 pixel resolution. The dataset comprises two equal subsets, 1309 images as bleeding images and 1309 as non-bleeding images. Also, it has corresponding binary mask images for both subsets(Figure-2). Each subset is split into two parts: 1049 (80%) images for training and 260 (20%) images for validation. The bleeding subset annotated by human experts contains 1309 binary masks in PNG format of the 224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.  
+The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format with 224 × 224 pixel resolution. The dataset comprises two equal subsets: 1309 images as bleeding images and 1309 as non-bleeding images. Also, it has corresponding binary mask images for both subsets (Figure 2). Each subset is split into two parts: 1049 (80%) images for training and 260 (20%) images for validation. The bleeding subset annotated by human experts contains 1309 binary masks in PNG format with  224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.  
 <p align="center"> 
 <img width="777" alt="Fig2" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/794c5864-2034-443d-bf74-3ea1c38fa29a">
 
@@ -39,7 +39,7 @@ The given training dataset consists of 2618 color images obtained from WCE. The 
 ## Method
 ### Analysing pixel intensity of bleeding and non-bleeding 
 
-In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears as red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.   
+In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.   
 
 <p align="center"> 
 <img width="777" alt="Fig3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/bd0cdbe8-b19b-45f5-821c-9ab0f643c497">
