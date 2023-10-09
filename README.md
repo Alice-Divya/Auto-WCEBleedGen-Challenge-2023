@@ -23,7 +23,7 @@ Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding 
 
 
 <p align="center"> 
-<img width="261" alt="Fig1" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/96c8d856-e0ad-4558-94da-90c196a34f6e">
+<img width="261" alt="Fig1.png" src="Fig1.png">
 </p>
 
 
