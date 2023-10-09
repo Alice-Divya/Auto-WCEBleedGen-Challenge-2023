@@ -325,7 +325,10 @@ We used the Auto-WCEBleedGen Challenge Test Dataset for testing, which includes 
 Before running the code, we need to organize the classification dataset in the above format.  
 ### How to run classification model 
 **1. Training**
-The main file that is used to train our best model (ResNet50) is - ``train.py``. To train this model we used the following bash script (batch size should be adjusted depending on how many samples to be fit into the GPU RAM, and corresponding paths for training data should be changed before running the bash command)
+
+**Installing dependencies**
+
+The first step for training the model is to installing the necessary dependencies. It can be achieved by `` pip install -r requirements.txt`` .The main file that is used to train our best model (ResNet50) is  ``train.py``. To train this model we used the following bash script (batch size should be adjusted depending on how many samples to be fit into the GPU RAM, and corresponding paths for training data should be changed before running the bash command)
 
  
 
@@ -368,8 +371,7 @@ Before running the code, we need to organize the segmentation dataset in the abo
 **1.Training**
 
  
-
-The file that is used for training the Residual U-net (optimum model) is -``segtrain.py``. Before using the bash command change the path of the ground truth mask and original images in ``train.py`` and batch size should be adjusted depending on how many samples to be fit into the **GPU RAM**. Then use the bash command  
+The first step for training the model is to installing the necessary dependencies. It can be achieved by `` pip install -r requirements.txt``.The file that is used for training the Residual U-net (optimum model) is -``segtrain.py``. Before using the bash command change the path of the ground truth mask and original images in ``train.py`` and batch size should be adjusted depending on how many samples to be fit into the **GPU RAM**. Then use the bash command  
 
  
 
