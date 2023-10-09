@@ -154,7 +154,8 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 | YOLOv8 |0.88  |0.88 |0.63 |
 | Attention U-Net | 0.272 |0.272 | 0.378|
 
- **Table 2.1** Indicates that ResUNet outperforms the other two models regarding average precision (AP) and mean average precision (MAP). The intersection over union (IOU) score for ResUNet is comparatively high. ResUNet is, therefore, the most effective model out of the three for the segmentation task.   
+
+ **Table 2.1** Indicates that ResUNet outperforms the other two models regarding average precision (AP) and mean average precision (MAP). The intersection over union (IOU) score for ResUNet is comparatively high. ResUNet is, therefore, the most effective model out of the three for the segmentation task. Here we want to mention that, AP and MAP is same due to the number of class that we used for evaluation is one.
 
 **Screenshot of results:**
  
