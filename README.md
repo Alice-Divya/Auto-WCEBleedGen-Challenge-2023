@@ -20,13 +20,16 @@ We showcase our solution and subsequent progress for the[Auto-WCEBleedGen Challe
 
 ## Overview
 Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding in the digestive tract, which circumscribes esophagus, stomach, small intestine, large intestine (colon), rectum, and anus. Wireless capsule endoscopy (WCE) is an efﬁcient tool to investigate GI tract disorders and perform painless imaging of the intestine (Figure-1). For an experienced gastroenterologist, it is estimated to take atleast 2 to 3 hours for the inspection of the WCE captured video of a patient. This tedious process of frame-by-frame analysis can result in human errors. In a developing country like India, there is an increasing demand for the research and development of robust, interpretable, and generalized AI models to assist the doctors to address the challenges faced in reaching a conclusion on the WCE reports of increasing patients. Through the help of computer-aided classification and detection of bleeding and non-bleeding frames, gastroenterologists can reduce their workload and save their valuable time. Our project focuses on a deep neural network approach, and through the evaluation results obtained, the model Resnet50 and ResUnet is finalized as the best models for classification and segmentation respectively. The above conclusion of the models was specifically based on the model's accuracy metrics for classification and IoU (Intersection Over Union) metrics for segmentation, along with its prediction images. The achieved accuracy of the classification best model is 0.983 and the IoU value for the segmentation best model is 0.938. 
+<p align="center"> 
+<img width="261" alt="Fig1" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/96c8d856-e0ad-4558-94da-90c196a34f6e">
+</p>
 
-<img width="261" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/4550a321-1ae0-47a8-99c7-4a96ba89e377">
 
 ## Dataset
 The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format, with 224 × 224 pixel resolution. The dataset is composed of two equal subsets, 1309 images as bleeding images and 1309 as non-bleeding images. Also it has Corresponding binary mask images for both subsets[Figure-2](https://private-user-images.githubusercontent.com/146803475/272868281-dd49c9f8-d830-4661-9382-9dc34e5ee7ff.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1MDkyMTgsIm5iZiI6MTY5NjUwODkxOCwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODY4MjgxLWRkNDljOWY4LWQ4MzAtNDY2MS05MzgyLTlkYzM0ZTVlZTdmZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNVQxMjI4MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2QxYjM2ZWY1NGNjMTA1ZDU1ODc2NmRhM2FhY2ExZjIwY2Q3Mjg4ODk1OGIxYmFlYzczNjc4OTNmN2FjMzI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.hgDs52trGd_1SZfOyqYy2P301pgBjkYh-uanrIgHwDQ)). Each subset is split into two parts, 1049 (80%) images for training and 260 (20%)images for validation. The bleeding subset is annotated by human expert and contains 1309 binary masks in PNG format of the same 224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.
 <p align="center"> 
-<img width="777" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/dd49c9f8-d830-4661-9382-9dc34e5ee7ff">
+<img width="777" alt="Fig2" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/794c5864-2034-443d-bf74-3ea1c38fa29a">
+
 </p>
 
 
@@ -34,8 +37,11 @@ The given training dataset consists of 2618 color images obtained from WCE. The 
 ### Analysing pixel intensity of bleeding and non-bleeding 
 R, G, and B are the three color channels used in RGB pictures. The R channel is crucial for distinguishing between bleeding and non-bleeding pixels because bleeding typically manifests as red colors. Here, we plot the R, G, and B intensity histograms using training images with bleed and non-bleed regions shown in the [Figure-3](https://private-user-images.githubusercontent.com/146803475/272866245-7c36ffc9-b93f-4724-8e9b-c414bbfe41a6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1MDkzMTUsIm5iZiI6MTY5NjUwOTAxNSwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODY2MjQ1LTdjMzZmZmM5LWI5M2YtNDcyNC04ZTliLWM0MTRiYmZlNDFhNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNVQxMjMwMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NzQwYzJkZmYxYWM3YzMxNTUzNmQ4YjUyZDk3NWExNWFiYzg4MmExNGYxYTE3Yzk1OGUwOWFlMmYyODQ3YzYzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.JHgQRmwqtdeqNPJzv3_kRtCammnAzIrLRhuAMXzUIDo). We observed that while the G and B intensities varied considerably, the R intensities were comparable for both types of pixels. Green and blue intensity overlap was still too great to distinguish between bleeding and non-bleeding pixels of images. Therefore, classifying bleeding and non-bleeding images would be difficult using traditional machine learning algorithms. We therefore provide deep learning models here, which we utilized for classification and detection of bleeding images.
 
-<img width="915" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/7c36ffc9-b93f-4724-8e9b-c414bbfe41a6">
 
+<p align="center"> 
+<img width="777" alt="Fig3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/bd0cdbe8-b19b-45f5-821c-9ab0f643c497">
+
+</p>
 
 In light of deep learning techniques for classification, we initially tried a simple 5-layer scratch CNN model. Because of the unsatisfactory outcomes of this model, we switched to more complicated models.  The different deep architectures that we evaluated for classification are **VGG16, Resnet50 and EfficientnetB0**. Our analysis showed that the accuracy levels of VGG16 and EfficientnetB0 were comparable. But comparing predictions of test data, Resnet50 shows better result than VGG16 and EfficientnetB0, which prompted us to choose the *Resnet50* model as our chosen best classification model.
 
@@ -51,7 +57,7 @@ The training dataset comprises 2618 color images and it is split in an 80:20 rat
 In 5-fold cross-validation, the data is divided into five equal-sized subsets or folds. The training process starts by training the model on four folds or subsets of the data, while the remaining fold acts as the validation set.The process described in [Figure 4(a)](https://github.com/NPCalicut/Blood/assets/146803475/cb634616-012a-4969-8503-274ddd02a4007) involves repeating the procedure five times, where each fold is used as the validation set once.
 
 <p align="center">
-  <img src="https://github.com/NPCalicut/Blood/assets/146803475/cb634616-012a-4969-8503-274ddd02a4007" alt="c1">
+  <img width="655" alt="Fig4" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/38a9009a-6354-438d-917b-ebcb188880ca">
 </p>
 
 
@@ -64,7 +70,7 @@ According to [Figure 4(b)](https://private-user-images.githubusercontent.com/146
 
 
 <p align="center">
-  <img width =600 src="https://github.com/NPCalicut/Blood/assets/146803475/9669b100-c102-4bf5-8cab-1517d5895fa3" alt="clsts1">
+  <img width="564" alt="Fig5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/6722d29d-d61f-4c2a-835c-7faabfbec3e9">
 </p>
 
 
@@ -72,7 +78,7 @@ According to [Figure 4(b)](https://private-user-images.githubusercontent.com/146
  
 During the training phase of the segmentation process, we experimented with different segmentation models including Residual-Unet, YOLOV8, and Attention U-net. These models were trained using annotated images and their corresponding ground truth data at the pixel level. 
 <p align="center">
-  <img src="https://github.com/NPCalicut/Blood/assets/146803475/148ee347-8697-4189-ba6c-394bcd5dd415" alt="s2">
+  <img width="637" alt="Fig6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/92003917-5be3-4050-9439-07674a5d234b">
 </p>
 
 
