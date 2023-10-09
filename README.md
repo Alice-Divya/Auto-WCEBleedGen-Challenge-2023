@@ -8,7 +8,6 @@ We showcase our solution and subsequent progress for the [Auto-WCEBleedGen Chall
 * [Overview](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#overview)
 * [Data](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#data)
 * [Method](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#models)
-* [Training](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#training)
 * [Results](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#results)
 * [How to run](https://github.com/NPCalicut/Blood/blob/priya_branch_1/README.md#how-to-run)
 
@@ -219,12 +218,15 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 
 **b) Predictions of segmentation in test dataset-1**
 
-<img width="887" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/8d281143-da63-4c3d-b6d6-e08eedc2e73b">
+ <p align="center">
+<img width="376" alt="Fig13" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/516f1022-7426-473d-b1c4-7815e4fafffa">
+</p>
 
 **c) Predictions of segmentation in test dataset-2**
 
-<img width="887" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/8d281143-da63-4c3d-b6d6-e08eedc2e73b">
-
+ <p align="center">
+<img width="385" alt="Fig14" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/dc610748-0324-43f1-b59c-86d13252f39d">
+</p>
 
 ## 3. Comparison of the model complexities  
 
