@@ -37,7 +37,7 @@ The given training dataset consists of 2618 color images obtained from WCE. The 
 
 
 ## Method
-### Analysing pixel intensity of bleeding and non-bleeding .images 
+### 1. Analysing pixel intensity of bleeding and non-bleeding .images 
 
 In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.
 
@@ -46,14 +46,14 @@ In an RGB image, the R channel is essential in distinguishing between bleeding a
 
 </p>
 
-From the deep Learning models, we first tried a simple 5-layer CNN model from scratch. Due to the unsatisfactory outcomes of this model, we switched to more efficient pretrained models. The different deep-learning architectures that we evaluated for classification are **VGG16, ResNet-50, and ResNet-101**.   
+From the deep Learning models, we first tried a simple 5-layer Convolutional Nueral Network(CNN) model from scratch. Due to the unsatisfactory outcomes of this model, we switched to more efficient pretrained models. The different deep-learning architectures that we evaluated for classification are **VGG-16, ResNet-50, and ResNet-101**.   
 
  
 
 We tried the different models for segmentation: **YOLOv8, ResUnet, and Attention U-Net**. YOLOv8 is a powerful and versatile object detection algorithm that can be used in various real-world scenarios to detect and classify objects with high accuracy and speed. On the other hand, the ResUnet is built from scratch, which enables it to learn the critical features from the given dataset more precisely. The third model, Attention U-Net, uses a ResNet-101 pre-trained on ImageNet dataset as its backbone.  
 
 
-### Training
+### 2. Training
 **Classification:**
 
 The training dataset comprises 2618 color images and it is split in an 80:20 ratio for training and validation, respectively. For classification, we had done 5-fold cross validation. In **5-fold cross-validation**, the data is divided into five equal-sized subsets or folds. 
@@ -66,15 +66,17 @@ The training process starts by training the model on four folds or subsets of th
 
 
 
-In summary, the training phase involves feeding the data into the CNN (Convolutional Neural Network) architecture by adjusting the model’s parameters (weights and biases) based on the input data and optimizing the model’s performance. The validation phase involves assessing the performance of the trained model on a separate dataset that was not used during training, indicating the model’s generalization ability. 
+In summary, the training phase involves feeding the data into the CNN architecture by adjusting the model’s parameters (weights and biases) based on the input data and optimizing the model’s performance. The validation phase involves assessing the performance of the trained model on a separate dataset that was not used during training, indicating the model’s generalization ability. 
+
+<p align="center">
+  <img width="564" alt="Fig5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/6722d29d-d61f-4c2a-835c-7faabfbec3e9">
+</p>
 
 According to Figure 4(b), the best model out of the 5-fold cross-validation is employed to classify test images as either bleeding or non-bleeding by using the Auto-WCEBleedGen Challenge Test Dataset.  
 
 It has been concluded that ResNet-50 demonstrates the best performance based on the metrics(Accuracy, F1 score, Recall) derived from the best model predictions out of the 5-fold cross-validation. Therefore, it is considered the optimum classification model as indicated in red in Figure 4(a). 
 
-<p align="center">
-  <img width="564" alt="Fig5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/6722d29d-d61f-4c2a-835c-7faabfbec3e9">
-</p>
+
 
 
  **Segmentation:**
@@ -82,7 +84,7 @@ It has been concluded that ResNet-50 demonstrates the best performance based on 
  For segmentation, the training dataset contains bleeding images and their corresponding ground truth images. Here, we are using an 80:20 split for training and validation data. During the training phase of the segmentation process, we experimented with different segmentation models, including ResUNet, YOLOV8, and Attention U-Net. These models were trained using annotated images and their corresponding ground truth data at the pixel level. 
  
 <p align="center">
-  <img width="637" alt="Fig6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/92003917-5be3-4050-9439-07674a5d234b">
+<img width="322" alt="Fig6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/a9e6652e-2898-4c35-8f35-606a7acf1a84">
 </p>
 
 After a thorough analysis of the performance of YOLOv8, Attention U-Net, and ResUNet in identifying bleeding zones, it has been determined that the ResUNet model consistently achieves the most favorable results. As a result, it is considered the optimum model for this segmentation task, as indicated in red in Figure 4(c). 
@@ -100,7 +102,7 @@ Figure 4(d) illustrates the testing phase, where the chosen ResUNet (optimum mod
 
 #### 5-Fold cross validation results for classification: 
 
-Note: Here we put best accuracy of 5-fold cross-validation results  
+**Note**: Here we put best model accuracy of 5-fold cross-validation results  
 
 **Table 1.1 :** Validation results of different classification models: 
 
@@ -110,7 +112,7 @@ Note: Here we put best accuracy of 5-fold cross-validation results
 | ResNet-50 |0.9828  |0.9885 |0.9829 |
 | ResNet-101 | 0.962 |0.966 | 0.952|
 
-As shown in **Table 1.1**, VGG-16 achieved good accuracy, recall, and F1-scores. However, ResNet-50 outperformed both VGG-16 and ResNet-101 in terms of prediction, with an accuracy of 0.9828, recall of 0.9885, and F1-score of 0.9829. Although ResNet-101 attained flawless evaluation scores, ResNet-50 is considered the best model out of five cross validations in terms of accuracy, recall and f1 score for classification tasks due to its superior performance compared to VGG16 and ResNet-101. 
+As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. However, ResNet-50 outperformed both VGG-16 and ResNet-101 in terms of prediction, with an accuracy of 0.9828, recall of 0.9885, and F1-score of 0.9829. Although ResNet-101 attained flawless evaluation scores, ResNet-50 is considered the best model out of five cross validations in terms of accuracy, recall and f1 score for classification tasks due to its superior performance compared to VGG16 and ResNet-101. 
 
   
 **Screenshot of results:**
@@ -129,13 +131,13 @@ As shown in **Table 1.1**, VGG-16 achieved good accuracy, recall, and F1-scores.
 
 </p>
 
-**b)- Predicted Bleed class images from test dataset-1**
+**c)- Predicted Bleed class images from test dataset-1**
 
 <p align="center">
  <img width="483" alt="Fig10" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/c19b357a-5168-40f1-b46a-e46f4ad5406a">
 </p>
 
-**3- Predicted Bleed class images from test dataset-2**
+**d- Predicted Bleed class images from test dataset-2**
 
 <p align="center">
  <img width="479" alt="Fig11" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/5b7d396c-82fe-4236-a062-20783ef1480b">
@@ -234,7 +236,7 @@ As shown in **Table 1.1**, VGG-16 achieved good accuracy, recall, and F1-scores.
 | ResNet-50   | 294.6 MB   |     25.6 million |         25.6 million |           50 |                       142 ms |
 | ResNet-101  | 513.3 MB   |     44.7 million |         44.6 million |          101 |                       223 ms |
 
-The complexity of a deep learning model increases along with the number of parameters and layers in the model architecture. This increased complexity can lead to longer training times and higher computational requirements. The complexity of the model alone does not determine performance or accuracy, and it is also correlated with the image feature complexity. Looking at the table provided, it is clear that the VGG-16 model has lower complexity than the rest of the models used in the study and exhibits the lowest accuracy, as shown in **Table 1.1**. In the WCE dataset, ResNet-50 performs better than the complex model ResNet-101 in terms of performance. Additionally, ResNet-101 has a longer inference time, indicating that it is computationally more complex than the other models. Hence, Resnet50 is considered the optimum model for classification. 
+The complexity of a deep learning model increases along with the number of parameters and layers in the model architecture. This increased complexity can lead to longer training times and higher computational requirements. The complexity of the model alone does not determine performance or accuracy, and it is also correlated with the image feature complexity. Looking at the table provided, it is clear that the VGG-16 model has lower complexity than the rest of the models used in the study and exhibits the lowest accuracy, as shown in Table 1.1. In the WCE dataset, ResNet-50 performs better than the complex model ResNet-101 in terms of performance. Additionally, ResNet-101 has a longer inference time, indicating that it is computationally more complex than the other models. Hence, ResNet-50 is considered the optimum model for classification. 
 
 ### Table 3.2   segmentation 
 
