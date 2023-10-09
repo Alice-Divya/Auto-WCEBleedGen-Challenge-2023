@@ -30,7 +30,7 @@ Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding 
 ## Dataset
 The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format with 224 × 224 pixel resolution. The dataset comprises two equal subsets: 1309 images as bleeding images and 1309 as non-bleeding images. Also, it has corresponding binary mask images for both subsets (Figure 2). Each subset is split into two parts: 1049 (80%) images for training and 260 (20%) images for validation. The bleeding subset annotated by human experts contains 1309 binary masks in PNG format with  224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.  
 <p align="center"> 
-<img width="777" alt="Fig2" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/794c5864-2034-443d-bf74-3ea1c38fa29a">
+<img width="777" alt="Fig2" src="Fig2.png">
 
 </p>
 
@@ -41,7 +41,7 @@ The given training dataset consists of 2618 color images obtained from WCE. The 
 In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.
 
 <p align="center"> 
-<img width="777" alt="Fig3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/bd0cdbe8-b19b-45f5-821c-9ab0f643c497">
+<img width="777" alt="Fig3" src="Fig3.png">
 
 </p>
 
@@ -60,7 +60,7 @@ The training dataset comprises 2618 color images and it is split in an 80:20 rat
 The training process starts by training the model on four folds or subsets of the data, while the remaining fold acts as the validation set. The process described in Figure 4(a) involves repeating the procedure five times, where each fold is used as the validation set once. 
 
 <p align="center">
-  <img width="655" alt="Fig4" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/38a9009a-6354-438d-917b-ebcb188880ca">
+  <img width="655" alt="Fig4" src="Fig4.png">
 </p>
 
 
@@ -68,7 +68,7 @@ The training process starts by training the model on four folds or subsets of th
 In summary, the training phase involves feeding the data into the CNN architecture by adjusting the model’s parameters (weights and biases) based on the input data and optimizing the model’s performance. The validation phase involves assessing the performance of the trained model on a separate dataset that was not used during training, indicating the model’s generalization ability. 
 
 <p align="center">
-  <img width="564" alt="Fig5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/6722d29d-d61f-4c2a-835c-7faabfbec3e9">
+  <img width="564" alt="Fig5" src="Fig5.png">
 </p>
 
 According to Figure 4(b), the best model out of the 5-fold cross-validation is employed to classify test images as either bleeding or non-bleeding by using the Auto-WCEBleedGen Challenge Test Dataset.  
@@ -83,13 +83,13 @@ It has been concluded that ResNet-50 demonstrates the best performance based on 
  For segmentation, the training dataset contains bleeding images and their corresponding ground truth images. Here, we are using an 80:20 split for training and validation data. During the training phase of the segmentation process, we experimented with different segmentation models, including ResUNet, YOLOV8, and Attention U-Net. These models were trained using annotated images and their corresponding ground truth data at the pixel level. 
  
 <p align="center">
-<img width="500" alt="Fig6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/a9e6652e-2898-4c35-8f35-606a7acf1a84">
+<img width="500" alt="Fig6" src="Fig6.png">
 </p>
 
 After a thorough analysis of the performance of YOLOv8, Attention U-Net, and ResUNet in identifying bleeding zones, it has been determined that the ResUNet model consistently achieves the most favorable results. As a result, it is considered the optimum model for this segmentation task, as indicated in red in Figure 4(c). 
 
 <p align="center">
-  <img width="589" alt="Fig7" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/57bea881-f3f0-4015-ab7d-b0f043a5af0d">
+  <img width="589" alt="Fig7" src="Fig7.png">
 </p>
 
 Figure 4(d) illustrates the testing phase, where the chosen ResUNet (optimum model) is employed to process the testing image, effectively identifying and detecting the presence of bleeding zones. 
@@ -120,26 +120,26 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 **a)- Predicted Bleed class images from validation dataset**
 
 <p align="center">
- <img width="700" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/37e89c2b-b293-4bda-9b10-f34771570760">
+ <img width="700" alt="Fig8" src="Fig8.png">
 </p>
 
 **b)- Predicted Non-bleed class images from validation dataset**
 
 <p align="center">
- <img width="700" alt="Fig9" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/7f2a01c1-e8d9-41c8-88d0-4351eebfe7ee">
+ <img width="700" alt="Fig9" src="Fig9.png">
 
 </p>
 
 **c)- Predictions of test dataset-1** 
 
 <p align="center">
- <img width="700" alt="Fig10" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/c19b357a-5168-40f1-b46a-e46f4ad5406a">
+ <img width="700" alt="Fig10" src="Fig10.png">
 </p>
 
 **d- Predictions of test dataset-2**
 
 <p align="center">
- <img width="700" alt="Fig11" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/5b7d396c-82fe-4236-a062-20783ef1480b">
+ <img width="700" alt="Fig11" src="Fig11.png">
 </p>
 
 ### 2. Segmentation
@@ -162,54 +162,54 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 **a)  Predictions of segmentation in validation dataset**
 
 <p align="center">
- <img width="600" alt="Fig12 1" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/35319a4c-bbec-48e1-a11a-3b9cae340d62">
+ <img width="600" alt="Fig12 1" src="Fig12.1.png">
  </p>
  
  <p align="center">
- <img width="600" alt="Fig12 2" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/7463c37f-7eca-4e6b-bb22-67ea0ab167c8">
- </p>
- 
-
- 
- <p align="center">
- <img width="600" alt="Fig12 3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/3b34c031-6656-4ffb-9997-463e7b55cc2a">
+ <img width="600" alt="Fig12 2" src="Fig12.2.png">
  </p>
  
 
  
  <p align="center">
- <img width="600" alt="Fig12 4" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/49e7d611-bda3-49f7-b5e9-d8c7cb53b556">
- </p>
- 
- 
- <p align="center">
- <img width="600" alt="Fig12 5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/31c97ece-bdf0-4af1-8ec4-f529cbcf8e09">
+ <img width="600" alt="Fig12 3" src="Fig12.3.png">
  </p>
  
 
  
  <p align="center">
- <img width="600" alt="Fig12 6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/046b1e6d-a0e3-47c9-b1fa-0e06a4a4f638">
+ <img width="600" alt="Fig12 4" src="Fig12.4.png">
+ </p>
+ 
+ 
+ <p align="center">
+ <img width="600" alt="Fig12 5" src="Fig12.5.png">
+ </p>
+ 
+
+ 
+ <p align="center">
+ <img width="600" alt="Fig12 6" src="Fig12.6.png">
  </p>
  
 
  <p align="center">
- <img width="600" alt="Fig12 7" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/ae9be163-5995-4d41-b2d5-acbe0a4af9b1">
+ <img width="600" alt="Fig12 7" src="Fig12.7.png">
  </p>
  
 
  <p align="center">
- <img width="600" alt="Fig12 8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/0868f6f2-b7f3-40b1-82e1-6175a07b3a11">
+ <img width="600" alt="Fig12 8" src="Fig12.8.png">
  </p>
 
 
  <p align="center">
- <img width="600" alt="Fig12 9" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/ef459c46-9651-4fa4-91ce-aee80b0c1d1c">
+ <img width="600" alt="Fig12 9" src="Fig12.9.png">
  </p>
  
 
  <p align="center">
- <img width="600" alt="Fig12 10" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/b7c3a4f0-29d6-443d-8878-23b6a27245c9">
+ <img width="600" alt="Fig12 10" src="Fig12.10.png">
  </p>
  
 
@@ -220,13 +220,13 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 **b) Predictions of segmentation in test dataset-1**
 
  <p align="center">
-<img width="700" alt="Fig13" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/516f1022-7426-473d-b1c4-7815e4fafffa">
+<img width="700" alt="Fig13" src="Fig13.png">
 </p>
 
 **c) Predictions of segmentation in test dataset-2**
 
  <p align="center">
-<img width="700" alt="Fig14" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/dc610748-0324-43f1-b59c-86d13252f39d">
+<img width="700" alt="Fig14" src="Fig14.png">
 </p>
 
 ## 3. Comparison of the model complexities  
@@ -262,21 +262,21 @@ When comparing the models mentioned in Table 3.2 above, ResUNet stands out with 
 The following images are the best 10 images that we predicted as bleed using validation dataset. 
 
 <p align="center">
- <img width="600" alt="Fig15" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/c5b5f114-35f8-482f-b21c-6252191b2f0c">
+ <img width="600" alt="Fig15" src="Fig15.png">
 </p>
 <p align="center">
- <img width="600" alt="Fig16" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/666bbdb3-4c32-4f77-a692-7d0b20402d71">
+ <img width="600" alt="Fig16" src="Fig16.png">
 </p>
 
 **3.1.2 CAMs plot of predictions using test dataset-1**
 
 <p align="center">
-<img width="600" alt="Fig17" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/b8b7e9ff-1410-426e-a72f-673f4883fc9c">
+<img width="600" alt="Fig17" src="Fig17.png">
 </p>
 
 **3.1.3 CAMs plot of predictions using test dataset-2**
 <p align="center">
-<img width="600" alt="Fig18" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/08fd34f8-b051-4241-abca-9cc37622ebd7">
+<img width="600" alt="Fig18" src="Fig18.png">
 
 </p>
 
