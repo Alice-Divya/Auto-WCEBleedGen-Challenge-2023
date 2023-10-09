@@ -13,7 +13,7 @@ We showcase our solution and subsequent progress for the [Auto-WCEBleedGen Chall
 * [How to run](https://github.com/NPCalicut/Blood/blob/priya_branch_1/README.md#how-to-run)
 
 ## Team members
-- Dr. Kalpana George
+- Dr. Kalpana George 
 - Abhiram A P
 - Alice Divya Nelson
 - Harishma N
@@ -119,25 +119,26 @@ As shown in **Table 1.1**, VGG-16 achieved good accuracy, recall, and F1-scores.
 **a)- Predicted Bleed class images from validation dataset**
 
 <p align="center">
-<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+ <img width="487" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/37e89c2b-b293-4bda-9b10-f34771570760">
 </p>
 
 **b)- Predicted Non-bleed class images from validation dataset**
 
 <p align="center">
-<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+ <img width="487" alt="Fig9" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/7f2a01c1-e8d9-41c8-88d0-4351eebfe7ee">
+
 </p>
 
 **b)- Predicted Bleed class images from test dataset-1**
 
 <p align="center">
-<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+ <img width="483" alt="Fig10" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/c19b357a-5168-40f1-b46a-e46f4ad5406a">
 </p>
 
 **3- Predicted Bleed class images from test dataset-2**
 
 <p align="center">
-<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+ <img width="479" alt="Fig11" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/5b7d396c-82fe-4236-a062-20783ef1480b">
 </p>
 
 ### 2. Segmentation
@@ -335,7 +336,12 @@ For testing the model, we can use ``segpredict.py``. Before running this, we nee
 
  
 
-``python3 segpredict.py      
+``python3 segpredict.py                                                              ``     
 
 
+Demo Example
+
+------------
+
+A demonstration example for classification and segmentation can be found in `classification_deemo.ipynb` and `segmentation_deemo.ipynb`.
 
