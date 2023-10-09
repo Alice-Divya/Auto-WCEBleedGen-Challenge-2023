@@ -248,7 +248,7 @@ The complexity of a deep learning model increases along with the number of param
 | YOLOv8  | 6 MB   |     3.2 million  | 3.2 million  |           261 |                       200 ms |
 | Attention U-Net   | 288.85MB    |     43.6 million  |    15.94 million  |          101 |                       333 ms | 
 
-When comparing the models mentioned in Table 3.2 above, ResUNet stands out with lower complexity in size, number of parameters, and inference time compared to the other models. On the other hand, Attention U-Net is more computationally complex, as indicated by its longer inference time. Considering the performance evaluation metrics and complexity analysis, ResUNet is the optimal model choice. 
+When comparing the models mentioned in Table 3.2 above, ResUNet stands out with lower complexity in size, number of parameters, and inference time compared to the other models. On the other hand, Attention U-Net is more computationally complex, as indicated by its longer inference time. Considering the performance evaluation metrics and complexity analysis, ResUNet is the optimal model choice.  
 
 ### 4. Interpretability plot:
 
