@@ -415,5 +415,5 @@ Demo Example
 
 ------------
 
-A demonstration example for classification and segmentation can be found in `classification_deemo.ipynb` and `segmentation_deemo.ipynb`.
+A demonstration example for classification and segmentation can be found in `classification_demo.ipynb` and `segmentation_demo.ipynb`.
 
