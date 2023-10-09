@@ -262,7 +262,15 @@ The following images are the best 10 images that we predicted as bleed using val
 
 **Note:** Original image and CAMs plot images are arranged as follows   
 
+<p align="center">
+ <img width="362" alt="Fig15" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/c5b5f114-35f8-482f-b21c-6252191b2f0c">
+</p>
+
 **3.1.2 CAMs plot of predictions using test dataset**
+
+<p align="center">
+ <img width="401" alt="Fig16" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/666bbdb3-4c32-4f77-a692-7d0b20402d71">
+</p>
 
 
 ## How to run
