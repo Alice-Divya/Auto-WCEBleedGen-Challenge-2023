@@ -148,7 +148,7 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 
 **Table 2.1 :** Validation results of different segmentation models: 
 
-| Model | Accuracy | Recall | F1-Score |
+| Model | Average precision | Mean Average Precision | IOU |
 | --- | --- | --- | --- |
 | ResUNet | 0.9791 | 0.9791 | 0.938 |
 | YOLOv8 |0.88  |0.88 |0.63 |
