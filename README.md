@@ -37,16 +37,16 @@ The given training dataset consists of 2618 color images obtained from WCE. The 
 
 
 ## Method
-### Analysing pixel intensity of bleeding and non-bleeding 
+### Analysing pixel intensity of bleeding and non-bleeding .images 
 
-In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.   
+In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.
 
 <p align="center"> 
 <img width="777" alt="Fig3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/bd0cdbe8-b19b-45f5-821c-9ab0f643c497">
 
 </p>
 
-From the Deep Learning models, we first tried a simple 5-layer CNN model from scratch. Due to the unsatisfactory outcomes of this model, we switched to more efficient pretrained models. The different deep-learning architectures that we evaluated for classification are **VGG16, ResNet-50, and ResNet-101**.   
+From the deep Learning models, we first tried a simple 5-layer CNN model from scratch. Due to the unsatisfactory outcomes of this model, we switched to more efficient pretrained models. The different deep-learning architectures that we evaluated for classification are **VGG16, ResNet-50, and ResNet-101**.   
 
  
 
