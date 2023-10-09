@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Import the reqouied Libraries
+# Import the required Libraries
 import os
 import numpy as np
 import tensorflow as tf
