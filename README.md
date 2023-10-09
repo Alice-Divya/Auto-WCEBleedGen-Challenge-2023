@@ -130,13 +130,13 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 
 </p>
 
-**c)- Predicted Bleed class images from test dataset-1**
+**c)- Predictions of test dataset-1** 
 
 <p align="center">
  <img width="700" alt="Fig10" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/c19b357a-5168-40f1-b46a-e46f4ad5406a">
 </p>
 
-**d- Predicted Bleed class images from test dataset-2**
+**d- Predictions of test dataset-2**
 
 <p align="center">
  <img width="700" alt="Fig11" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/5b7d396c-82fe-4236-a062-20783ef1480b">
