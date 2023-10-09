@@ -236,7 +236,7 @@ As shown in Table 1.1, VGG-16 achieved good accuracy, recall, and F1-scores. How
 | :--------- | :--------: | :---------------: | :-------------------: | :-----------: | :----------------------------: |
 | VGG-16      | 174.4 MB   |     15.2 million |         15.2 million |           16 |                       184 ms |
 | ResNet-50   | 294.6 MB   |     25.6 million |         25.6 million |           50 |                       142 ms |
-| ResNet-101  | 513.3 MB   |     44.7 million |         44.6 million |          101 |                       223 ms |
+| ResNet-101  | 513.3 MB   |     44.7 million |         44.6 million |          202 |                       223 ms |
 
 The complexity of a deep learning model increases along with the number of parameters and layers in the model architecture. This increased complexity can lead to longer training times and higher computational requirements. The complexity of the model alone does not determine performance or accuracy, and it is also correlated with the image feature complexity. Looking at the table provided, it is clear that the VGG-16 model has lower complexity than the rest of the models used in the study and exhibits the lowest accuracy, as shown in Table 1.1. In the WCE dataset, ResNet-50 performs better than the complex model ResNet-101 in terms of performance. Additionally, ResNet-101 has a longer inference time, indicating that it is computationally more complex than the other models. Hence, ResNet-50 is considered the optimum model for classification. 
 
