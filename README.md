@@ -1,7 +1,7 @@
 # Auto-WCEBleedGen Challenge-2023
 ## Automatic Detection and Classification of Bleeding and Non-Bleeding frames in Wireless Capsule Endoscopy
 
-We showcase our solution and subsequent progress for the[Auto-WCEBleedGen Challenge](https://misahub.in/CVIP/challenge.html). This challenge provides an unique opportunity to create, test, and evaluate cutting-edge Artificial Intelligence (AI) models for automatic detection and classification of bleeding and non-bleeding frames extracted from Wireless Capsule Endoscopy (WCE) videos. Our project make us the dataset created by the Auto-WCEBleedGen Challenge Organizers. The training dataset encompasses a wide array of gastrointestinal bleeding scenarios, accompanied by medically validated binary masks and bounding boxes. Our objective is to facilitate comparisons with existing methods and enhance the interpretability and reproducibility of automated systems in bleeding detection using WCE data.   
+We showcase our solution and subsequent progress for the [Auto-WCEBleedGen Challenge](https://misahub.in/CVIP/challenge.html) to create, test, and evaluate cutting-edge Artificial Intelligence (AI) models for automatically detecting and classifying bleeding and non-bleeding frames extracted from Wireless Capsule Endoscopy (WCE) videos. Our project uses the dataset created by the Auto-WCEBleedGen Challenge organizers. The training dataset encompasses various gastrointestinal bleeding scenarios, accompanied by medically validated binary masks and bounding boxes. Our objective is to facilitate comparisons with existing methods and enhance the interpretability and reproducibility of automated systems in bleeding detection using WCE data. 
 
 ### Contents
 * [Team members](https://github.com/NPCalicut/Blood/blob/Raghul_branch_1/README.md#team-members)
@@ -18,15 +18,18 @@ We showcase our solution and subsequent progress for the[Auto-WCEBleedGen Challe
 - Alice Divya Nelson
 - Harishma N
 
-## Overview
-Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding in the digestive tract, which circumscribes esophagus, stomach, small intestine, large intestine (colon), rectum, and anus. Wireless capsule endoscopy (WCE) is an efﬁcient tool to investigate GI tract disorders and perform painless imaging of the intestine (Figure-1). For an experienced gastroenterologist, it is estimated to take atleast 2 to 3 hours for the inspection of the WCE captured video of a patient. This tedious process of frame-by-frame analysis can result in human errors. In a developing country like India, there is an increasing demand for the research and development of robust, interpretable, and generalized AI models to assist the doctors to address the challenges faced in reaching a conclusion on the WCE reports of increasing patients. Through the help of computer-aided classification and detection of bleeding and non-bleeding frames, gastroenterologists can reduce their workload and save their valuable time. Our project focuses on a deep neural network approach, and through the evaluation results obtained, the model Resnet50 and ResUnet is finalized as the best models for classification and segmentation respectively. The above conclusion of the models was specifically based on the model's accuracy metrics for classification and IoU (Intersection Over Union) metrics for segmentation, along with its prediction images. The achieved accuracy of the classification best model is 0.983 and the IoU value for the segmentation best model is 0.938. 
+## Overview  
+
+Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding in the digestive tract, which circumscribes the esophagus, stomach, small intestine, large intestine (colon), rectum, and anus. Wireless capsule endoscopy (WCE) is an efﬁcient tool for investigating GI tract disorders and performing painless intestine imaging (Figure-1). For an experienced gastroenterologist, it is estimated to take at least 2 to 3 hours to inspect the WCE captured video of a patient. This tedious process of frame-by-frame analysis can result in human errors. In a developing country like India, there is an increasing demand for the research and development of robust, interpretable, and generalized AI models to assist doctors in addressing the challenges faced in concluding the WCE reports of increasing patients. Through the help of computer-aided classification and detection of bleeding and non-bleeding frames, gastroenterologists can reduce their workload and save valuable time. Our project focuses on a deep neural network approach, and through the evaluation results obtained, the model ResNet-50 and ResUnet is finalized as the best models for classification and segmentation, respectively. The above conclusion of the models was specifically based on the model's accuracy metrics for classification and IoU (Intersection Over Union) metrics for segmentation, along with its prediction images. The achieved accuracy of the classification best model is 0.983, and the IoU value for the segmentation best model is 0.938.   
+
+
 <p align="center"> 
 <img width="261" alt="Fig1" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/96c8d856-e0ad-4558-94da-90c196a34f6e">
 </p>
 
 
 ## Dataset
-The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format, with 224 × 224 pixel resolution. The dataset is composed of two equal subsets, 1309 images as bleeding images and 1309 as non-bleeding images. Also it has Corresponding binary mask images for both subsets[Figure-2](https://private-user-images.githubusercontent.com/146803475/272868281-dd49c9f8-d830-4661-9382-9dc34e5ee7ff.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1MDkyMTgsIm5iZiI6MTY5NjUwODkxOCwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODY4MjgxLWRkNDljOWY4LWQ4MzAtNDY2MS05MzgyLTlkYzM0ZTVlZTdmZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNVQxMjI4MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2QxYjM2ZWY1NGNjMTA1ZDU1ODc2NmRhM2FhY2ExZjIwY2Q3Mjg4ODk1OGIxYmFlYzczNjc4OTNmN2FjMzI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.hgDs52trGd_1SZfOyqYy2P301pgBjkYh-uanrIgHwDQ)). Each subset is split into two parts, 1049 (80%) images for training and 260 (20%)images for validation. The bleeding subset is annotated by human expert and contains 1309 binary masks in PNG format of the same 224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.
+The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format, with 224 × 224 pixel resolution. The dataset comprises two equal subsets, 1309 images as bleeding images and 1309 as non-bleeding images. Also, it has corresponding binary mask images for both subsets(Figure-2). Each subset is split into two parts: 1049 (80%) images for training and 260 (20%) images for validation. The bleeding subset annotated by human experts contains 1309 binary masks in PNG format of the 224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.  
 <p align="center"> 
 <img width="777" alt="Fig2" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/794c5864-2034-443d-bf74-3ea1c38fa29a">
 
@@ -35,26 +38,27 @@ The given training dataset consists of 2618 color images obtained from WCE. The 
 
 ## Method
 ### Analysing pixel intensity of bleeding and non-bleeding 
-R, G, and B are the three color channels used in RGB pictures. The R channel is crucial for distinguishing between bleeding and non-bleeding pixels because bleeding typically manifests as red colors. Here, we plot the R, G, and B intensity histograms using training images with bleed and non-bleed regions shown in the [Figure-3](https://private-user-images.githubusercontent.com/146803475/272866245-7c36ffc9-b93f-4724-8e9b-c414bbfe41a6.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1MDkzMTUsIm5iZiI6MTY5NjUwOTAxNSwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODY2MjQ1LTdjMzZmZmM5LWI5M2YtNDcyNC04ZTliLWM0MTRiYmZlNDFhNi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNVQxMjMwMTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02NzQwYzJkZmYxYWM3YzMxNTUzNmQ4YjUyZDk3NWExNWFiYzg4MmExNGYxYTE3Yzk1OGUwOWFlMmYyODQ3YzYzJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.JHgQRmwqtdeqNPJzv3_kRtCammnAzIrLRhuAMXzUIDo). We observed that while the G and B intensities varied considerably, the R intensities were comparable for both types of pixels. Green and blue intensity overlap was still too great to distinguish between bleeding and non-bleeding pixels of images. Therefore, classifying bleeding and non-bleeding images would be difficult using traditional machine learning algorithms. We therefore provide deep learning models here, which we utilized for classification and detection of bleeding images.
 
+In an RGB image, the R channel is essential in distinguishing between bleeding and non-bleeding frames because bleeding usually appears as red. The R, G, and B intensity histograms are plotted using training images with bleed and non-bleed regions (Figure-3). We observed that the intensity distribution of red pixels is almost similar for both bleed and non-bleed, which makes it difficult to distinguish between bleeding and non-bleeding pixels. The intensity of overlaps between green and blue channels is also high, making distinguishing between bleeding and non-bleeding pixels in frames difficult. Therefore, employing conventional machine learning techniques to distinguish between bleeding and non-bleeding images would be challenging. We, therefore, decided to go with deep learning models for the classification and detection of bleeding images.   
 
 <p align="center"> 
 <img width="777" alt="Fig3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/bd0cdbe8-b19b-45f5-821c-9ab0f643c497">
 
 </p>
 
-In light of deep learning techniques for classification, we initially tried a simple 5-layer scratch CNN model. Because of the unsatisfactory outcomes of this model, we switched to more complicated models.  The different deep architectures that we evaluated for classification are **VGG16, Resnet50 and EfficientnetB0**. Our analysis showed that the accuracy levels of VGG16 and EfficientnetB0 were comparable. But comparing predictions of test data, Resnet50 shows better result than VGG16 and EfficientnetB0, which prompted us to choose the *Resnet50* model as our chosen best classification model.
+From the Deep Learning models, we first tried a simple 5-layer CNN model from scratch. Due to the unsatisfactory outcomes of this model, we switched to more efficient pretrained models. The different deep-learning architectures that we evaluated for classification are **VGG16, ResNet-50, and ResNet-101**.   
 
+ 
 
-For segmentation, we tried the different models: **YOLOV8, Residual-Unet and Attention U-net**. We employ pre-trained encoders across all networks, which is an enhancement over regular U-Net. A U-Net-like architecture called Attention U-net  employs relatively straightforward pre-trained Imagenet networks as an encoder.
-The Residual-Unet is an scratch model and additionally using a pre-trained network, YOLOV8 is a cutting-edge technique that also performed well. When comparing results, as best model *Residual-Unet* outperformed other models.
+We tried the different models for segmentation: **YOLOv8, ResUnet, and Attention U-Net**. YOLOv8 is a powerful and versatile object detection algorithm that can be used in various real-world scenarios to detect and classify objects with high accuracy and speed. On the other hand, the ResUnet is built from scratch, which enables it to learn the critical features from the given dataset more precisely. The third model, Attention U-Net, uses a ResNet-101 pre-trained on ImageNet dataset as its backbone.  
 
 
 ## Training
 **Classification:**
 
-The training dataset comprises 2618 color images and it is split in an 80:20 ratio for training and validation, respectively.
-In 5-fold cross-validation, the data is divided into five equal-sized subsets or folds. The training process starts by training the model on four folds or subsets of the data, while the remaining fold acts as the validation set.The process described in [Figure 4(a)](https://github.com/NPCalicut/Blood/assets/146803475/cb634616-012a-4969-8503-274ddd02a4007) involves repeating the procedure five times, where each fold is used as the validation set once.
+The training dataset comprises 2618 color images and it is split in an 80:20 ratio for training and validation, respectively. For classification, we had done 5-fold cross validation. In **5-fold cross-validation**, the data is divided into five equal-sized subsets or folds. 
+
+The training process starts by training the model on four folds or subsets of the data, while the remaining fold acts as the validation set. The process described in Figure 4(a) involves repeating the procedure five times, where each fold is used as the validation set once. 
 
 <p align="center">
   <img width="655" alt="Fig4" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/38a9009a-6354-438d-917b-ebcb188880ca">
@@ -62,12 +66,11 @@ In 5-fold cross-validation, the data is divided into five equal-sized subsets or
 
 
 
-In summary, the training phase involves feeding the data into the CNN (Convolutional Neural Network) architecture, adjusting the model's parameters (weights and biases) based on the input data, and optimizing the model's performance. The validation phase involves assessing the performance of the trained model on a separate dataset that was not used during training, providing an indication of the model's generalization ability. After training, the best model was saved and select that model.
+In summary, the training phase involves feeding the data into the CNN (Convolutional Neural Network) architecture by adjusting the model’s parameters (weights and biases) based on the input data and optimizing the model’s performance. The validation phase involves assessing the performance of the trained model on a separate dataset that was not used during training, indicating the model’s generalization ability. 
 
-After evaluating different convolutional neural network (CNN) models, including the EfficientNetB0, VGG16, and ResNet50, it was concluded that Resnet50 demonstrated the best performance for prediction. That is highlighted in  [Figure 4(a)](https://private-user-images.githubusercontent.com/146803475/272896840-9f5b728b-405d-43b7-9db0-9dab1cfb7f7e.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1NjYwNjksIm5iZiI6MTY5NjU2NTc2OSwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODk2ODQwLTlmNWI3MjhiLTQwNWQtNDNiNy05ZGIwLTlkYWIxY2ZiN2Y3ZS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNlQwNDE2MDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1lN2NhYjc1YjBmN2RkZWNlZDhmM2QzNTE2MWQyNTkzN2RmYzllMzQ3MjZmN2ZhZDMyM2Q4MTJjYTg5NzRiZDBhJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.FdSDWv5Rng1l0OlKjFKVl2QUdpdkaJrQ2XE7o-20ysM).
+According to Figure 4(b), the best model out of the 5-fold cross-validation is employed to classify test images as either bleeding or non-bleeding by using the Auto-WCEBleedGen Challenge Test Dataset.  
 
-According to [Figure 4(b)](https://private-user-images.githubusercontent.com/146803475/272897479-9669b100-c102-4bf5-8cab-1517d5895fa3.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1NjYzMDksIm5iZiI6MTY5NjU2NjAwOSwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODk3NDc5LTk2NjliMTAwLWMxMDItNGJmNS04Y2FiLTE1MTdkNTg5NWZhMy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNlQwNDIwMDlaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT02ZDc2YWE4MGMzOTlmY2JhMGU5ZTUyMGM5ZGUyMGZmMjY3ZmNlMTEzMmY5ZWJmZmE2NGE5YWJiOGE0YjQ4MWZkJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.U1ec4wZlP8qGQ2HKVZaFQtgM1q-L5Gsh-N3P7opVpGs), the chosen model (Resnet50) is employed to classify test images as either bleeding or non-bleeding. To accomplish this, the test images is fed into the model for classification.
-
+It has been concluded that ResNet-50 demonstrates the best performance based on the metrics(Accuracy, F1 score, Recall) derived from the best model predictions out of the 5-fold cross-validation. Therefore, it is considered the optimum classification model as indicated in red in Figure 4(a). 
 
 <p align="center">
   <img width="564" alt="Fig5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/6722d29d-d61f-4c2a-835c-7faabfbec3e9">
@@ -75,24 +78,27 @@ According to [Figure 4(b)](https://private-user-images.githubusercontent.com/146
 
 
  **Segmentation:**
+
+ For segmentation, the training dataset contains bleeding images and their corresponding ground truth images. Here, we are using an 80:20 split for training and validation data. During the training phase of the segmentation process, we experimented with different segmentation models, including ResUNet, YOLOV8, and Attention U-Net. These models were trained using annotated images and their corresponding ground truth data at the pixel level. 
  
-During the training phase of the segmentation process, we experimented with different segmentation models including Residual-Unet, YOLOV8, and Attention U-net. These models were trained using annotated images and their corresponding ground truth data at the pixel level. 
 <p align="center">
   <img width="637" alt="Fig6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/92003917-5be3-4050-9439-07674a5d234b">
 </p>
 
-
-Evaluation was conducted to assess their performance, and it was found that the Residual-Unet and YOLOV8 models yielded the most favourable results. This model is highlighted in [Figure 4(c)](https://private-user-images.githubusercontent.com/146803475/272869458-33fe57e8-a1ea-45fd-a6fe-cde8209526da.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1NjYzODEsIm5iZiI6MTY5NjU2NjA4MSwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODY5NDU4LTMzZmU1N2U4LWExZWEtNDVmZC1hNmZlLWNkZTgyMDk1MjZkYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNlQwNDIxMjFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mMDA4Y2IyNTJiZTNjY2Y0MTA2MDkyMTcwOGI5ZGQ4NmRkMmM1ZjE5ODRiZDU3ODBhNmI0YmFhOWUxZDZhN2U5JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.eGW4a0zv1QvjyUNbSWF5QOxg1AIiJdrAS6pmwgYqWnQ).
+After a thorough analysis of the performance of YOLOv8, Attention U-Net, and ResUNet in identifying bleeding zones, it has been determined that the ResUNet model consistently achieves the most favorable results. As a result, it is considered the optimum model for this segmentation task, as indicated in red in Figure 4(c). 
 
 <p align="center">
-  <img width =600 src="https://github.com/NPCalicut/Blood/assets/146803475/7f581e3d-39f7-4ea3-bdc4-4e0fba94d2aa" alt="Screenshot 2023-10-05 164823">
+  <img width="589" alt="Fig7" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/57bea881-f3f0-4015-ab7d-b0f043a5af0d">
 </p>
 
-[Figure 4(d)](https://private-user-images.githubusercontent.com/146803475/272887275-7f581e3d-39f7-4ea3-bdc4-4e0fba94d2aa.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1NjY0NDEsIm5iZiI6MTY5NjU2NjE0MSwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODg3Mjc1LTdmNTgxZTNkLTM5ZjctNGVhMy1iZGM0LTRlMGZiYTk0ZDJhYS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA2JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNlQwNDIyMjFaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MDJhNDc2ZWQ0OGUyMTg4MGZkNmUxMmEwYzgxNzk1MTY4ODE3Y2RhZTUwMGE1ZTc5NTZhZDU1MDJjMjE0OGU1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.HIlNCwDfXmdLMPMf0rLObx8byiuS1cSXCnp6GUruMBE) illustrates the testing phase, where the chosen Residual-Unet model is employed to process the testing image, effectively identifying and detecting the presence of bleeding zones.
+Figure 4(d) illustrates the testing phase, where the chosen ResUNet (optimum model) is employed to process the testing image, effectively identifying and detecting the presence of bleeding zones. 
+
 
 ## Results
 
-### 1. 5-Fold cross validation results for classification: 
+### 1. Classification
+
+#### 5-Fold cross validation results for classification: 
 
 Note: Here we put best accuracy of 5-fold cross-validation results  
 
@@ -100,131 +106,93 @@ Note: Here we put best accuracy of 5-fold cross-validation results
 
 | Model | Accuracy | Recall | F1-Score |
 | --- | --- | --- | --- |
-| VGG16 | 0.99 | 0.99 | 0.99 |
-| Resnet50 |0.9828  |0.9885 |0.9829 |
-| Resnet 101 | 0.962 |0.966 | 0.952|
+| VGG-16 | 0.9943 | 0.9923 | 0.9942 |
+| ResNet-50 |0.9828  |0.9885 |0.9829 |
+| ResNet-101 | 0.962 |0.966 | 0.952|
 
-According to **Table 1.1**, VGG16 achieved good accuracy, recall, and F1-scores. However, ResNet50 outperformed both VGG16 and ResNet101 in terms of prediction, with an accuracy of 0.9828, recall of 0.9885, and F1-score of 0.9829. Although ResNet101 attained flawless evaluation scores, ResNet50 is considered the best model out of five cross validation in terms of accuracy, recall and f1 score for classification tasks due to its superior performance compared to VGG16 and ResNet101. 
+As shown in **Table 1.1**, VGG-16 achieved good accuracy, recall, and F1-scores. However, ResNet-50 outperformed both VGG-16 and ResNet-101 in terms of prediction, with an accuracy of 0.9828, recall of 0.9885, and F1-score of 0.9829. Although ResNet-101 attained flawless evaluation scores, ResNet-50 is considered the best model out of five cross validations in terms of accuracy, recall and f1 score for classification tasks due to its superior performance compared to VGG16 and ResNet-101. 
 
-
- **Screenshot of classification results:**
+  
+**Screenshot of results:**
 
  
-**1- Predicted Bleed class images from validation dataset**
+**a)- Predicted Bleed class images from validation dataset**
 
-<img width="862" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/3f6e14ce-001b-42e5-8f34-6ee815aad139">
+<p align="center">
+<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+</p>
 
+**b)- Predicted Non-bleed class images from validation dataset**
 
-**2- Predicted Bleed class images from test dataset-1**
+<p align="center">
+<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+</p>
 
-<img width="887" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/8d281143-da63-4c3d-b6d6-e08eedc2e73b">
+**b)- Predicted Bleed class images from test dataset-1**
+
+<p align="center">
+<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+</p>
 
 **3- Predicted Bleed class images from test dataset-2**
 
-<img width="887" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/8d281143-da63-4c3d-b6d6-e08eedc2e73b">
+<p align="center">
+<img width="451" alt="Fig8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/75d6b5fc-33b6-473c-bae4-7e26f0673135">
+</p>
 
-### 2. Validation results for segmentation:   
+### 2. Segmentation
+
+#### Validation results for segmentation:   
 
 **Table 2.1 :** Validation results of different segmentation models: 
 
 | Model | Accuracy | Recall | F1-Score |
 | --- | --- | --- | --- |
-| ResUnet | 0.9791 | 0.9791 | 0.938 |
-| YOLOV8 |0.88  |0.88 |0.63 |
-| Attention Unet | 0.272 |0.272 | 0.378|
+| ResUNet | 0.9791 | 0.9791 | 0.938 |
+| YOLOv8 |0.88  |0.88 |0.63 |
+| Attention U-Net | 0.272 |0.272 | 0.378|
 
- **Table 2.1** indicates that Residual-Unet outperforms the other two models in terms of average precision (AP) and mean average precision (MAP). The intersection over union (IOU) score for Residual-Unet is likewise comparatively high. Residual-Unet is therefore the most effective model out of the three for the segmentation task. 
+ **Table 2.1** Indicates that ResUNet outperforms the other two models regarding average precision (AP) and mean average precision (MAP). The intersection over union (IOU) score for ResUNet is comparatively high. ResUNet is, therefore, the most effective model out of the three for the segmentation task.   
 
-
- **Screenshot of segmentation results:**
-
+**Screenshot of results:**
  
-**1-  Predictions of segmentation in validation dataset**
+**a)  Predictions of segmentation in validation dataset**
 
 <img width="862" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/3f6e14ce-001b-42e5-8f34-6ee815aad139">
 
 
-**2- Predicted Bleed zone images from test dataset-1**
+**b) Predictions of segmentation in test dataset-1**
 
 <img width="887" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/8d281143-da63-4c3d-b6d6-e08eedc2e73b">
 
-**3- Predicted Bleed zone images from test dataset-2**
+**c) Predictions of segmentation in test dataset-2**
 
 <img width="887" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/8d281143-da63-4c3d-b6d6-e08eedc2e73b">
 
 
-## Complexity analysis of models
+## 3. Comparison of the model complexities  
 
-### Classification models:
+### Table 3.1: Classification 
 
-| Model | size | Total parameters | Traininable parameters | No of layers | Time (ms) inference step (GPU) |
-| --- | --- | --- | --- | --- | --- |
-| ResUnet | 0.9791 | 0.9791 | 0.938 |  |  |
-| YOLOV8 |0.88  |0.88 |0.63 |  |  |
-| Attention Unet | 0.272 |0.272 | 0.378|  |  |
+| Model      | Size       | Total Parameters | Trainable Parameters | No of Layers | Time (ms) Inference Step (GPU) |
+| :--------- | :--------: | :---------------: | :-------------------: | :-----------: | :----------------------------: |
+| VGG-16      | 174.4 MB   |     15.2 million |         15.2 million |           16 |                       184 ms |
+| ResNet-50   | 294.6 MB   |     25.6 million |         25.6 million |           50 |                       142 ms |
+| ResNet-101  | 513.3 MB   |     44.7 million |         44.6 million |          101 |                       223 ms |
 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+The complexity of a deep learning model increases along with the number of parameters and layers in the model architecture. This increased complexity can lead to longer training times and higher computational requirements. The complexity of the model alone does not determine performance or accuracy, and it is also correlated with the image feature complexity. Looking at the table provided, it is clear that the VGG-16 model has lower complexity than the rest of the models used in the study and exhibits the lowest accuracy, as shown in **Table 1.1**. In the WCE dataset, ResNet-50 performs better than the complex model ResNet-101 in terms of performance. Additionally, ResNet-101 has a longer inference time, indicating that it is computationally more complex than the other models. Hence, Resnet50 is considered the optimum model for classification. 
 
+### Table 3.2   segmentation 
 
+| Model      | Size       | Total Parameters | Trainable Parameters | No of Layers | Time (ms) Inference Step (GPU) |
+| :--------- | :--------: | :---------------: | :-------------------: | :-----------: | :----------------------------: |
+| ResUNet | 39.3 MB   |     3.42 million  |         3.42 million  |           5 |                       100 ms |
+| YOLOv8  | 6 MB   |     3.2 million  | 3.2 million  |           261 |                       200 ms |
+| Attention U-Net   | 288.85MB    |     43.6 million  |    15.94 million  |          101 |                       333 ms | 
 
+When comparing the models mentioned in Table 2.2 above, ResUNet stands out with lower complexity in size, number of parameters, and inference time compared to the other models. On the other hand, Attention U-Net is more computationally complex, as indicated by its longer inference time. Considering the performance evaluation metrics and complexity analysis, ResUNet is the optimal model choice. 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-**2.2.1 Predictions of segmentation in validation dataset**
-
-
-
-**2.2.2 Predictions of segmentation in test dataset**
-
-### 3. interpretability plot:
+### 4. Interpretability plot:
 
 **CAMs**: *Class Activation Maps*, or *CAMs*, offer a means to see which pixels in an image most strongly influence how the model classifies it. In other words, a CAM shows how "important" each pixel in an input image is for a certain classification.
 
@@ -232,26 +200,31 @@ According to **Table 1.1**, VGG16 achieved good accuracy, recall, and F1-scores.
 
 **3.1.1 CAMs plot for validation dataset**
 
+The following images are the best 10 images that we predicted as bleed using validation dataset. 
 
+**Note:** Original image and CAMs plot images are arranged as follows   
 
 **3.1.2 CAMs plot of predictions using test dataset**
 
 
 ## How to run
 
+ 
 The dataset is organized in the folloing way:
 ####
 **classification** 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 **segmentation**
 
+ 
+
     ├── data                                                  ├── data
-    │   ├── train                                             │   ├── train
-    │   │     ├── Bleed                                       │   │     ├── Bleed 
-    │   │     └── Nonbleed                                    │   │     │      ├── Images
-    │   └── validation                                        │   │     │      └── Masks
-    │           ├── Bleed                                     │   │     └── Nonbleed
-    │           └── Nonbleed                                  │   │            ├── Images
+    │   ├── train                                             │   ├── train
+    │   │     ├── Bleed                                       │   │     ├── Bleed 
+    │   │     └── Nonbleed                                    │   │     │      ├── Images
+    │   └── validation                                        │   │     │      └── Masks
+    │           ├── Bleed                                     │   │     └── Nonbleed
+    │           └── Nonbleed                                  │   │            ├── Images
     ├── test                                                  │   │            └── Masks
     │    ├── Testdata1                                        │   └── validation
     │    └── Testdata2                                        │         ├── Bleed
@@ -264,15 +237,105 @@ The dataset is organized in the folloing way:
                                                                     ├── Testdata1
                                                                     └── Testdata2
 
+ 
+
 The training dataset contains two sets of images: one set with bleeding and the other set without bleeding. The entire training data is split with 80% allocated for training and 20% for validation. For training the dataset, we split it into five folds for five-fold cross-validation to perform classification.                                                                    
 In order to perform segmentation, we utilized the WCEBleedGen dataset, which was also split in an 80:20 ratio for training and validation. The training dataset consists of two separate sets: one set containing bleeding images and their corresponding masks, and another set containing non-bleeding images and their corresponding masks. Similarly, the validation set follows the same format, with separate sets for bleeding and non-bleeding images along with their corresponding masks.
 
+ 
+
 We used the Auto-WCEBleedGen Challenge Test Dataset for testing, which includes  tasetdata1 and testdata2 and only contain images. Thise dataset were used to assess model predictions.
-1. Training
 
-The main file that is used to train all models -  ``train.py``. Running ``python train.py --help`` will return set of all possible input parameters.
-To train all models we used the folloing bash script (batch size was chosen depending on how many samples fit into the GPU RAM, limit was adjusted accordingly to keep the same number of updates for every network)::
+ 
 
+Before running the code, we need to organize the classification dataset in the above format.  
+### How to run classification model 
+**1. Training**
+The main file that is used to train our best model (ResNet50) is - ``train.py``. To train this model we used the following bash script (batch size should be adjusted depending on how many samples to be fit into the GPU RAM, and corresponding paths for training data should be changed before running the bash command)
+
+ 
+
+``python3 train.py``
+
+ 
+
+**2.Validation**
+
+ 
+
+For validating the model, we have uploaded a ``validation.py`` file. To validate this model, we need to give the correct path of the model saved after training and the path of the validation dataset also should be updated. After that use the bash command:
+
+ 
+
+``python3 validation.py                                                                  ``
+
+ 
+
+**3.Prediction**
+
+ 
+
+Testing of the model is done using ``prediction.py``. To test the model, we need to load the saved model and edit the test image path which contains images to be tested. Then use the bash command:
+
+ 
+
+``python3 prediction.py                                                                  ``
+
+ 
+
+### How to run Segmentation model
+
+ 
+
+Before running the code, we need to organize the segmentation dataset in the above format.
+
+ 
+
+**1.Training**
+
+ 
+
+The file that is used for training the Residual U-net (optimum model) is -``segtrain.py``. Before using the bash command change the path of the ground truth mask and original images in ``train.py`` and batch size should be adjusted depending on how many samples to be fit into the **GPU RAM**. Then use the bash command  
+
+ 
+
+``python3 segtrain.py                                                                    ``
+
+ 
+
+**2.Validation**  
+
+ 
+
+For validating the model, we used ``segvalid.py``. Here also the original image as well as path to the mask should be updated correctly in ``segvalid.py``. Provide the correct path of the model which is being saved after training and also provide the path for saving the output mask. Then the bash command provided below can be used for validation.  
+
+ 
+
+``python3 segvalid.py                                                                    ``
+
+ 
+
+**3.Evalution**
+
+ 
+
+For evaluating the Residual U-net model use ``segeval.py``. For running ``segeval.py`` we need to change the path of the ground truth mask and also change the path of the predicted mask folder in ``segeval.py``. Then run the bash command:
+
+ 
+
+``python3 segeval.py                                                                     ``
+
+ 
+
+**4. Prediction**
+
+ 
+
+For testing the model, we can use ``segpredict.py``. Before running this, we need to make necessary changes in ``segpredict.py`` like giving the correct path of the model and also the paths of the test folder ``segpredict.py``. Bash command for prediction:
+
+ 
+
+``python3 segpredict.py      
 
 
 
