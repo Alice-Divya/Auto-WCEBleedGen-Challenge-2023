@@ -25,8 +25,9 @@ Gastrointestinal (GI) bleeding is a medical condition characterized by bleeding 
 
 ## Dataset
 The given training dataset consists of 2618 color images obtained from WCE. The images are in 24-bit PNG format, with 224 × 224 pixel resolution. The dataset is composed of two equal subsets, 1309 images as bleeding images and 1309 as non-bleeding images. Also it has Corresponding binary mask images for both subsets[Figure-2](https://private-user-images.githubusercontent.com/146803475/272868281-dd49c9f8-d830-4661-9382-9dc34e5ee7ff.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE2OTY1MDkyMTgsIm5iZiI6MTY5NjUwODkxOCwicGF0aCI6Ii8xNDY4MDM0NzUvMjcyODY4MjgxLWRkNDljOWY4LWQ4MzAtNDY2MS05MzgyLTlkYzM0ZTVlZTdmZi5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMDA1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTAwNVQxMjI4MzhaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT00N2QxYjM2ZWY1NGNjMTA1ZDU1ODc2NmRhM2FhY2ExZjIwY2Q3Mjg4ODk1OGIxYmFlYzczNjc4OTNmN2FjMzI4JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.hgDs52trGd_1SZfOyqYy2P301pgBjkYh-uanrIgHwDQ)). Each subset is split into two parts, 1049 (80%) images for training and 260 (20%)images for validation. The bleeding subset is annotated by human expert and contains 1309 binary masks in PNG format of the same 224 x 224 pixel resolution. White pixels in the masks correspond to bleeding localization.
-
+<p align="center"> 
 <img width="777" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/dd49c9f8-d830-4661-9382-9dc34e5ee7ff">
+</p>
 
 
 ## Method
