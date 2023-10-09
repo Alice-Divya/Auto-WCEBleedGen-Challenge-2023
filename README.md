@@ -411,9 +411,10 @@ For testing the model, we can use ``segpredict.py``. Before running this, we nee
 
 ``python3 segpredict.py                                                              ``     
 
+Note:The entire code is run on the GPU 
+``NVIDIA-SMI 520.61.05,Driver version 520.61.05, CUDA version 11.8``
 
 Demo Example
-
 ------------
 
 A demonstration example for classification and segmentation can be found in `classification_demo.ipynb` and `segmentation_demo.ipynb`.
