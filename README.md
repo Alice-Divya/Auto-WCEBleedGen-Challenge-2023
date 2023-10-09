@@ -159,7 +159,60 @@ As shown in **Table 1.1**, VGG-16 achieved good accuracy, recall, and F1-scores.
  
 **a)  Predictions of segmentation in validation dataset**
 
-<img width="862" alt="image" src="https://github.com/NPCalicut/Blood/assets/146803475/3f6e14ce-001b-42e5-8f34-6ee815aad139">
+<p align="center">
+ <img width="479" alt="Fig12 1" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/35319a4c-bbec-48e1-a11a-3b9cae340d62">
+ </p>
+ 
+ <p align="center">
+ <img width="479" alt="Fig12 2" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/7463c37f-7eca-4e6b-bb22-67ea0ab167c8">
+ </p>
+ 
+
+ 
+ <p align="center">
+ <img width="479" alt="Fig12 3" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/3b34c031-6656-4ffb-9997-463e7b55cc2a">
+ </p>
+ 
+
+ 
+ <p align="center">
+ <img width="479" alt="Fig12 4" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/49e7d611-bda3-49f7-b5e9-d8c7cb53b556">
+ </p>
+ 
+ 
+ <p align="center">
+ <img width="479" alt="Fig12 5" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/31c97ece-bdf0-4af1-8ec4-f529cbcf8e09">
+ </p>
+ 
+
+ 
+ <p align="center">
+ <img width="479" alt="Fig12 6" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/046b1e6d-a0e3-47c9-b1fa-0e06a4a4f638">
+ </p>
+ 
+
+ <p align="center">
+ <img width="479" alt="Fig12 7" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/ae9be163-5995-4d41-b2d5-acbe0a4af9b1">
+ </p>
+ 
+
+ <p align="center">
+ <img width="479" alt="Fig12 8" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/0868f6f2-b7f3-40b1-82e1-6175a07b3a11">
+ </p>
+
+
+ <p align="center">
+ <img width="479" alt="Fig12 9" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/ef459c46-9651-4fa4-91ce-aee80b0c1d1c">
+ </p>
+ 
+
+ <p align="center">
+ <img width="392" alt="Fig12 10" src="https://github.com/Alice-Divya/Auto-WCEBleedGen-Challenge-2023/assets/146923115/b7c3a4f0-29d6-443d-8878-23b6a27245c9">
+ </p>
+ 
+
+
+
 
 
 **b) Predictions of segmentation in test dataset-1**
